@@ -1,0 +1,125 @@
+<center>
+    <h1>This for only admin </h1>
+    <div id="loginForm">
+<h2>Login</h2>
+<label for="username">Username:</label><br>
+<input type="text" id="username" name="username"><br>
+<label for="password">Password:</label><br>
+<input type="password" id="password" name="password"><br><br>
+<button onclick="login()">Login</button>
+</div>
+<div class="content adminContent" style="display: none;"><h>LOGIN SUCCESSFULLY</h>
+  <h1>Welcome</h1>
+  
+<h1>Admin centre</h1>
+<h2>This page for only Admin</h2>
+
+<button onclick="openIframe('iframe1')">Open Iframe 1</button>
+<!-- Pop-ups -->
+<button onclick="openPopup('popup1')">Open Popup 1</button>
+<div id="popup1" class="popup">
+  <span class="-close"  onclick="closePopup('popup1')">&times;</span>
+
+<p>This is a popup content.</p>
+</div>
+<!-- Iframes -->
+<div id="iframe1" class="iframe-container">  
+  <span class="-close"  onclick="closeIframe('iframe1')">&times;</span>
+<iframe style ="height: 750px; width: 100%;" src="https://filemanager.ai/new/#/c/185.27.134.11/if0_35302762/eyJ0IjoiZnRwIiwiYyI6eyJwIjoibEVEUjFQRE52Z2NwNG1HIiwiaSI6IlwvIn19"></iframe>
+
+</div>
+</div>
+
+
+ </center>
+ <style>
+     /* Admin cantent  */
+   
+
+     .iframe-container {
+      border: 1px solid #000;
+      width: 90%;
+      overflow: auto;
+      border-radius: 10px;
+      background: White;
+      position: fixed;
+      display:none;
+      right:5% ;
+      left: 5%;
+      top: 50px;
+      
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid #000;
+      background: #fff;
+      padding: 20px;
+    }
+    
+     /* Admin cantent  */
+   
+
+     .iframe-container {
+      border: 1px solid #000;
+      width: 90%;
+      overflow: auto;
+      border-radius: 10px;
+      background: White;
+      position: fixed;
+      display:none;
+      right:5% ;
+      left: 5%;
+      top: 50px;
+      
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid #000;
+      background: #fff;
+      padding: 20px;
+    }
+    
+/* Admin css */
+  .custom-content {
+    border: 1px solid #000;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .custom-iframe-container {
+    border: 1px solid #000;
+    width: 90%;
+    overflow: auto;
+    border-radius: 10px;
+    background: White;
+    position: fixed;
+    right:5% ;
+    left: 5%;
+    top: 50px;
+    display:none;
+  }
+
+  .custom-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #000;
+    background: #fff;
+    padding: 20px;
+  }
+ </style>
+ <script>
+
+ </script>

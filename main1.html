@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta charset="utf-8" /><meta name="apple-mobile-web-app-status-bar-style" content="default" /><meta name="mobile-web-app-capable" content="yes" /><meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, viewport-fit=cover" /><meta name="theme-color" content="#ffffff" />
+<title>White Space</title>
+<link rel="stylesheet" href="main1.css">
+
+</head>
+<body>
+   
+   
+    
+
+ <!-- Editor Start-->   
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js' ></script>
+<div class="Input" style ="z-index:-99;">   
+<div style ="z-index:-99;" id="editor" class='same' stype="display:block">
+</div></div>  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js"> </script>
+ <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>  <!--end  Editor--> 
+  
+  
+  
+<!-- Two Menu  buttones -->
+   <div id="circularMenu" class="circular-menu">
+  <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
+    <i class="fa fa-plus"></i>
+  </a>
+  <menu class="items-wrapper">
+   
+    <a  onclick="openCustomFrame('customFrame5')" class="menu-item fa fa-facebook"></a>
+    <a onclick="openCustomFrame('customFrame6')" class="menu-item fa fa-twitter"></a>
+    <a onclick="openCustomFrame('customFrame7')" class="menu-item fa fa-google-plus"></a>
+    <a onclick="openCustomFrame('customFrame8')" class="menu-item fa fa-linkedin"></a>
+  </menu>
+</div>
+
+
+<div id="circularMenu1" class="circular-menu circular-menu-left active">
+  <a class="floating-btn" onclick="document.getElementById('circularMenu1').classList.toggle('active');">
+    <i class="fa fa-bars"></i>
+  </a>
+  <menu class="items-wrapper">
+   
+    <a onclick="openCustomFrame('customFrame1')" class="menu-item fa fa-home"></a>
+    <a onclick="openCustomFrame('customFrame2')" class="menu-item fa fa-home"></a>
+   <a onclick="openCustomFrame('customFrame3')" class="menu-item fa fa-home"></a>
+    <a onclick="openCustomFrame('customFrame4')" class="menu-item fa fa-home"></a>
+    <!-- Two Menu  buttones End  -->
+
+
+<!-- Notepad start frame 4 -->
+<div id="customFrameContainer">
+  <div id="customFrame4" class="custom-frame" style="height: 600px; display: none;">
+      <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame4', this.value)" class="custom-size">
+  <span class="-close"  onclick="closeCustomFrame('customFrame4')">&times;</span>
+      <br>
+     <center>
+    <h1 style="color: #333;">Notepad</h1>
+    <div>
+        <button onclick="saveNote()">Save</button>
+        <button onclick="deleteNote()">Delete</button>
+        <button onclick="downloadNote()">Download</button>
+        <button onclick="setBold()">Bold</button>
+        <select onchange="changeFontSize(this.value)">
+            <option value="12">Font Size</option>
+            <option value="16">16px</option>
+            <option value="20">20px</option>
+            <option value="24">24px</option>
+        </select>
+        <input type="color" id="colorPicker" onchange="changeTextColor(this.value)">
+    </div>
+    <div>
+        <div id="pageIndicator">Page 1</div>
+        <button onclick="previousPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      <br>  <br><textarea id="notepad" class="page-transition" rows="10" cols="50"></textarea>
+    </div></center>
+  </div>
+</div>
+<!-- Notepad end-->
+
+<!-- Admin login frame 1 -->
+<div id="customFrameContainer">
+  <div id="customFrame1" class="custom-frame" style="height: 600px ; display: none;">
+      <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame1', this.value)" class="custom-size">
+  <span class="-close"  onclick="closeCustomFrame('customFrame1')">&times;</span>
+      <br>
+  <center>
+      <h1>This for only admin </h1>
+      <div id="loginForm">
+  <h2>Login</h2>
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="password">Password:</label><br>
+  <input type="password" id="password" name="password"><br><br>
+  <button onclick="login()">Login</button>
+</div>
+<div class="content adminContent" style="display: none;"><h>LOGIN SUCCESSFULLY</h>
+    <h1>Welcome</h1>
+    
+  <h1>Admin centre</h1>
+  <h2>This page for only Admin</h2>
+  
+  <button onclick="openIframe('iframe1')">Open Iframe 1</button>
+  <!-- Pop-ups -->
+<button onclick="openPopup('popup1')">Open Popup 1</button>
+<div id="popup1" class="popup">
+    <span class="-close"  onclick="closePopup('popup1')">&times;</span>
+  
+  <p>This is a popup content.</p>
+</div>
+<!-- Iframes -->
+<div id="iframe1" class="iframe-container">  
+    <span class="-close"  onclick="closeIframe('iframe1')">&times;</span>
+  <iframe style ="height: 750px; width: 100%;" src="https://filemanager.ai/new/#/c/185.27.134.11/if0_35302762/eyJ0IjoiZnRwIiwiYyI6eyJwIjoibEVEUjFQRE52Z2NwNG1HIiwiaSI6IlwvIn19"></iframe>
+  
+</div>
+</div>
+
+
+   </center>
+  </div>
+</div>
+<!-- Admin login end-->
+
+<!-- prime frame 2-->
+<div id="customFrameContainer">
+  <div id="customFrame2" class="custom-frame" style="height: 600px ; display: none;">
+      <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame2', this.value)" class="custom-size">
+        <span class="-close"  onclick="closeCustomFrame('customFrame2')">&times;</span>
+  
+      <br>
+  <center>
+      
+      <div id="customLoginForm">
+  <h2>Login</h2>
+  <label for="customUsername">Username:</label><br>
+  <input type="text" id="customUsername" name="customUsername"><br>
+  <label for="customPassword">Password:</label><br>
+  <input type="password" id="customPassword" name="customPassword"><br><br>
+  <button onclick="customLogin()">Login</button>
+</div>
+
+<!-- Custom content elements -->
+<div class="custom-content customPrimeContent" style="display: none;">
+  <h2>Custom Prime Content 1</h2>
+  <p>This content is visible to logged-in users only.</p>
+  <button onclick="customOpenIframe('customIframe1')">Open Iframe 1</button>
+  <button onclick="customOpenPopup('customPopup1')">Open Popup 1</button>
+</div>
+<div class="custom-content customPrimeContent" style="display: none;">
+  <h2>Custom Prime Content 2</h2>
+  <p>This content is visible to logged-in users only.</p>
+</div>
+<div class="custom-content customPrimeContent" style="display: none;">
+  <h2>Custom Prime Content 3</h2>
+  <p>This content is visible to logged-in users only.</p>
+  <button onclick="customOpenIframe('customIframe2')">Open Iframe 2</button>
+  <button onclick="customOpenPopup('customPopup2')">Open Popup 2</button>
+</div>
+
+<!-- Custom Iframes -->
+<div id="customIframe1" class="custom-iframe-container">
+  <button onclick="customCloseIframe('customIframe1')">Close Iframe 1</button>
+  <iframe src="https://example.com"></iframe>
+</div>
+
+<div id="customIframe2" class="custom-iframe-container">
+  <button onclick="customCloseIframe('customIframe2')">Close Iframe 2</button>
+  <iframe src="https://example.com"></iframe>
+</div>
+
+<!-- Custom Pop-ups -->
+<div id="customPopup1" class="custom-popup">
+  <button onclick="customClosePopup('customPopup2')">Close Popup 1</button>
+  <p>This is a custom popup content.</p>
+</div>
+
+<div id="customPopup2" class="custom-popup">
+  <button onclick="customClosePopup('customPopup2')">Close Popup 2</button>
+  <p>This is another custom popup content.</p>
+</div> </center></div></div>
+      
+  <!-- HTML  to file frame 3-->        
+      <div id="customFrameContainer">
+  <div id="customFrame3" class="custom-frame" style="height: 600px ; display: none;">
+      <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame3', this.value)" class="custom-size">
+        <span class="-close"  onclick="closeCustomFrame('customFrame3')">&times;</span>      <center >
+             
+<code id="codeBlock" onclick="copyCode()" class="copycode">
+    &lt;!DOCTYPE html&gt;
+    &lt;h1&gt; Daya &lt h1&gt;
+    
+</code>
+
+
+    <h1>Enter HTML:</h1>
+    <textarea class="text" id="htmlCode" rows="10" cols="50"></textarea><br>
+    <h2>Enter File Name:</h2>
+    <input type="text" id="fileName"><br>
+    <button id="downloadButton">Download HTML File</button></center>
+ </div> </div>
+
+
+
+
+<!-- frame 5 online campailar -->
+  <div id="customFrameContainer">
+  <div id="customFrame5" class="custom-frame" style="height: 600px ; display: none;">
+      <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame5', this.value)" class="custom-size">
+        <span class="-close"  onclick="closeCustomFrame('customFrame5')">&times;</span>  <br><br>
+        
+        <iframe style=" width: 100%;height: 100%;" src="https://www.scholarhat.com/compiler/html"></iframe>
+        </div></div>
+</body>
+</html>
+<script src="main1.js"></script>
+
+
+
+ 
+ 
+ 

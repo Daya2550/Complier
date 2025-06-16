@@ -1,0 +1,457 @@
+<center>
+      
+    <div id="customLoginForm">
+<h2>Login</h2>
+<label for="customUsername">Username:</label><br>
+<input type="text" id="customUsername" name="customUsername"><br>
+<label for="customPassword">Password:</label><br>
+<input type="password" id="customPassword" name="customPassword"><br><br>
+<button onclick="customLogin()">Login</button>
+</div>
+
+<!-- Custom content elements -->
+<div class="custom-content customPrimeContent" style="display: none;">
+<h2>Custom Prime Content 1</h2>
+<p>This content is visible to logged-in users only.</p>
+<button onclick="customOpenIframe('customIframe1')">Open Iframe 1</button>
+<button onclick="customOpenPopup('customPopup1')">Open Popup 1</button>
+</div>
+<div class="custom-content customPrimeContent" style="display: none;">
+<h2>Custom Prime Content 2</h2>
+<p>This content is visible to logged-in users only.</p>
+</div>
+<div class="custom-content customPrimeContent" style="display: none;">
+<h2>Custom Prime Content 3</h2>
+<p>This content is visible to logged-in users only.</p>
+<button onclick="customOpenIframe('customIframe2')">Open Iframe 2</button>
+<button onclick="customOpenPopup('customPopup2')">Open Popup 2</button>
+</div>
+
+<!-- Custom Iframes -->
+<div id="customIframe1" class="custom-iframe-container">
+<button onclick="customCloseIframe('customIframe1')">Close Iframe 1</button>
+<iframe src="https://example.com"></iframe>
+</div>
+
+<div id="customIframe2" class="custom-iframe-container">
+<button onclick="customCloseIframe('customIframe2')">Close Iframe 2</button>
+<iframe src="https://example.com"></iframe>
+</div>
+
+<!-- Custom Pop-ups -->
+<div id="customPopup1" class="custom-popup">
+<button onclick="customClosePopup('customPopup2')">Close Popup 1</button>
+<p>This is a custom popup content.</p>
+</div>
+
+<div id="customPopup2" class="custom-popup">
+<button onclick="customClosePopup('customPopup2')">Close Popup 2</button>
+<p>This is another custom popup content.</p>
+</div> </center>
+<style>
+  .custom-frame {
+      border: 1px solid #000;
+      width: 90%;
+      overflow: auto;
+      border-radius: 10px;
+      background: White;
+      position: fixed;
+      right:5% ;
+      left: 5%;
+      top: 50px;
+    }
+    .custom-size{
+        width: 90%;
+        height: 2px;
+    }
+    .-close {
+position: absolute;
+top: 0px;
+right: 10px;
+font-size: 30px;
+color: #ff001f;
+cursor: pointer; }
+</style>
+<script>
+   
+ // Check if the user was previously logged in
+  var isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+if (isLoggedIn) {
+  var adminContentElements = document.getElementsByClassName('adminContent');
+  for (var i = 0; i < adminContentElements.length; i++) {
+    adminContentElements[i].style.display = 'block';
+  }
+  document.getElementById("loginForm").style.display = 'none';
+}
+
+// Define an array to store usernames and passwords
+var userCredentials = [
+  { username: "dj", password: "2550" },
+  { username: "user", password: "password2" }
+  // Add more username-password pairs as needed
+];
+
+function login() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  // Check if the provided username and password match any entry in the array
+  var isValidCredentials = userCredentials.some(function(credential) {
+    return credential.username === username && credential.password === password;
+  });
+
+  if (isValidCredentials) {
+  location.reload();
+    // Set login status in local storage
+    localStorage.setItem('isLoggedIn', 'true');
+
+    var adminContentElements = document.getElementsByClassName('adminContent');
+    for (var i = 0; i < adminContentElements.length; i++) {
+      adminContentElements[i].style.display = 'block';
+    }
+    document.getElementById("loginForm").style.display = 'none';
+  } else {
+    alert("Invalid username or password. Please try again.");
+  }
+}
+
+function openIframe(iframeId) {
+  if (isLoggedIn) {
+    var iframe = document.getElementById(iframeId);
+    iframe.style.display = 'block';
+  } else {
+    alert('Please login first.');
+  }
+}
+
+function closeIframe(iframeId) {
+  var iframe = document.getElementById(iframeId);
+  iframe.style.display = 'none';
+}
+
+function openPopup(popupId) {
+  if (isLoggedIn) {
+    var popup = document.getElementById(popupId);
+    popup.style.display = 'block';
+  } else {
+    alert('Please login first.');
+  }
+}
+
+function closePopup(popupId) {
+  var popup = document.getElementById(popupId);
+  popup.style.display = 'none';
+}
+
+
+ // Admin frame, pop pup,cantent js
+var isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+if (isLoggedIn) {
+  var adminContentElements = document.getElementsByClassName('adminContent');
+  for (var i = 0; i < adminContentElements.length; i++) {
+    adminContentElements[i].style.display = 'block';
+  }
+  document.getElementById("loginForm").style.display = 'none';
+}
+
+// Define an array to store usernames and passwords
+var userCredentials = [
+  { username: "dj", password: "2550" },
+  { username: "user", password: "password2" }
+  // Add more username-password pairs as needed
+];
+
+function login() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  // Check if the provided username and password match any entry in the array
+  var isValidCredentials = userCredentials.some(function(credential) {
+    return credential.username === username && credential.password === password;
+  });
+
+  if (isValidCredentials) {
+  location.reload();
+    // Set login status in local storage
+    localStorage.setItem('isLoggedIn', 'true');
+
+    var adminContentElements = document.getElementsByClassName('adminContent');
+    for (var i = 0; i < adminContentElements.length; i++) {
+      adminContentElements[i].style.display = 'block';
+    }
+    document.getElementById("loginForm").style.display = 'none';
+  } else {
+    alert("Invalid username or password. Please try again.");
+  }
+}
+
+function openIframe(iframeId) {
+  if (isLoggedIn) {
+    var iframe = document.getElementById(iframeId);
+    iframe.style.display = 'block';
+  } else {
+    alert('Please login first.');
+  }
+}
+
+function closeIframe(iframeId) {
+  var iframe = document.getElementById(iframeId);
+  iframe.style.display = 'none';
+}
+
+function openPopup(popupId) {
+  if (isLoggedIn) {
+    var popup = document.getElementById(popupId);
+    popup.style.display = 'block';
+  } else {
+    alert('Please login first.');
+  }
+}
+
+function closePopup(popupId) {
+  var popup = document.getElementById(popupId);
+  popup.style.display = 'none';
+}
+
+// Admin cantent 
+var isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+if (isLoggedIn) {
+  var adminContentElements = document.getElementsByClassName('adminContent');
+  for (var i = 0; i < adminContentElements.length; i++) {
+    adminContentElements[i].style.display = 'block';
+  }
+  document.getElementById("loginForm").style.display = 'none';
+}
+
+// Define an array to store usernames and passwords
+var userCredentials = [
+  { username: "dj", password: "2550" },
+  { username: "user", password: "password2" }
+  // Add more username-password pairs as needed
+];
+
+function login() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  // Check if the provided username and password match any entry in the array
+  var isValidCredentials = userCredentials.some(function(credential) {
+    return credential.username === username && credential.password === password;
+  });
+
+  if (isValidCredentials) {
+  location.reload();
+    // Set login status in local storage
+    localStorage.setItem('isLoggedIn', 'true');
+
+    var adminContentElements = document.getElementsByClassName('adminContent');
+    for (var i = 0; i < adminContentElements.length; i++) {
+      adminContentElements[i].style.display = 'block';
+    }
+    document.getElementById("loginForm").style.display = 'none';
+  } else {
+    alert("Invalid username or password. Please try again.");
+  }
+}
+
+function openIframe(iframeId) {
+  if (isLoggedIn) {
+    var iframe = document.getElementById(iframeId);
+    iframe.style.display = 'block';
+  } else {
+    alert('Please login first.');
+  }
+}
+
+function closeIframe(iframeId) {
+  var iframe = document.getElementById(iframeId);
+  iframe.style.display = 'none';
+}
+
+function openPopup(popupId) {
+  if (isLoggedIn) {
+    var popup = document.getElementById(popupId);
+    popup.style.display = 'block';
+  } else {
+    alert('Please login first.');
+  }
+}
+
+function closePopup(popupId) {
+  var popup = document.getElementById(popupId);
+  popup.style.display = 'none';
+}
+
+
+ // prime frame and pop up 
+var isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+if (isLoggedIn) {
+  var newContentElements = document.getElementsByClassName('newContent');
+  for (var i = 0; i < newContentElements.length; i++) {
+    newContentElements[i].style.display = 'block';
+  }
+  document.getElementById("loginForm").style.display = 'none';
+}
+
+// Define an array to store usernames and passwords
+var userCredentials = [
+  { username: "daya", password: "2550" },
+  { username: "user", password: "password2" }
+  // Add more username-password pairs as needed
+];
+
+function newLogin() {
+  var username = document.getElementById("newUsername").value;
+  var password = document.getElementById("newPassword").value;
+
+  // Check if the provided username and password match any entry in the array
+  var isValidCredentials = userCredentials.some(function(credential) {
+    return credential.username === username && credential.password === password;
+  });
+
+  if (isValidCredentials) {
+    location.reload();
+    // Set login status in local storage
+    localStorage.setItem('isLoggedIn', 'true');
+
+    var newContentElements = document.getElementsByClassName('newContent');
+    for (var i = 0; i < newContentElements.length; i++) {
+      newContentElements[i].style.display = 'block';
+    }
+    document.getElementById("loginForm").style.display = 'none';
+  } else {
+    alert("Invalid username or password. Please try again.");
+  }
+}
+
+function openNewIframe(iframeId) {
+  if (isLoggedIn) {
+    var iframe = document.getElementById(iframeId);
+    iframe.style.display = 'block';
+  } else {
+    alert('Please login first.');
+  }
+}
+
+function closeNewIframe(iframeId) {
+  var iframe = document.getElementById(iframeId);
+  iframe.style.display = 'none';
+}
+
+function openNewPopup(popupId) {
+  if (isLoggedIn) {
+    var popup = document.getElementById(popupId);
+    popup.style.display = 'block';
+  } else {
+    alert('Please login first.');
+  }
+}
+
+function closeNewPopup(popupId) {
+  var popup = document.getElementById(popupId);
+  popup.style.display = 'none';
+}
+
+// prime 
+var customIsLoggedIn = localStorage.getItem('customIsLoggedIn') === 'true';
+
+if (customIsLoggedIn) {
+  var customPrimeContentElements = document.getElementsByClassName('customPrimeContent');
+  for (var i = 0; i < customPrimeContentElements.length; i++) {
+    customPrimeContentElements[i].style.display = 'block';
+  }
+  document.getElementById("customLoginForm").style.display = 'none';
+}
+
+// Define an array to store usernames and passwords
+var customUserCredentials = [
+  { customUsername: "dj", customPassword: "2550" },
+  { customUsername: "user", customPassword: "password2" }
+  // Add more username-password pairs as needed
+];
+
+function customLogin() {
+  var customUsername = document.getElementById("customUsername").value;
+  var customPassword = document.getElementById("customPassword").value;
+
+  // Check if the provided username and password match any entry in the array
+  var customIsValidCredentials = customUserCredentials.some(function(credential) {
+    return credential.customUsername === customUsername && credential.customPassword === customPassword;
+  });
+
+  if (customIsValidCredentials) {
+    location.reload();
+    // Set login status in local storage
+    localStorage.setItem('customIsLoggedIn', 'true');
+
+    var customPrimeContentElements = document.getElementsByClassName('customPrimeContent');
+    for (var i = 0; i < customPrimeContentElements.length; i++) {
+      customPrimeContentElements[i].style.display = 'block';
+    }
+    document.getElementById("customLoginForm").style.display = 'none';
+  } else {
+    alert("Invalid username or password. Please try again.");
+  }
+}
+
+function customOpenIframe(customIframeId) {
+  if (customIsLoggedIn) {
+    var customIframe = document.getElementById(customIframeId);
+    customIframe.style.display = 'block';
+  } else {
+    alert('Please login first.');
+  }
+}
+
+function customCloseIframe(customIframeId) {
+  var customIframe = document.getElementById(customIframeId);
+  customIframe.style.display = 'none';
+}
+
+function customOpenPopup(customPopupId) {
+  if (customIsLoggedIn) {
+    var customPopup = document.getElementById(customPopupId);
+    customPopup.style.display = 'block';
+  } else {
+    alert('Please login first.');
+  }
+}
+
+function customClosePopup(customPopupId) {
+  var customPopup = document.getElementById(customPopupId);
+  customPopup.style.display = 'none';
+}
+// Html to file 
+      document.getElementById("downloadButton").addEventListener("click", function () {
+          const htmlCode = document.getElementById("htmlCode").value;
+          const fileName = document.getElementById("fileName").value + ".html";
+          const blob = new Blob([htmlCode], { type: "text/html" });
+          const url = URL.createObjectURL(blob);
+
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+      });
+
+
+// code block
+function copyCode() {
+      const codeBlock = document.getElementById('codeBlock');
+      const textArea = document.createElement('textarea');
+      textArea.value = codeBlock.textContent;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      alert('Code copied to clipboard!');
+  }
+   
+</script>

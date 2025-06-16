@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayanand Jagdale - Header with Navigation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            z-index: 999;
+        }
+        header {
+            background: #2d3e50;
+            color: #fff;
+            padding: 0;
+            position: relative;
+            z-index: 999;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5em 1.5em;
+            z-index: 999;
+        }
+        .navbar .brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .navbar nav {
+            display: flex;
+            gap: 1.2em;
+        }
+        .navbar nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.2s;
+        }
+        .navbar nav a:hover {
+            color: #ffb347;
+        }
+        .toggle-btn {
+            background: #ffb347;
+            color: #2d3e50;
+            border: none;
+            border-radius: 4px;
+            padding: 0.4em 1em;
+            font-size: 1em;
+            cursor: pointer;
+            margin-left: 1em;
+            transition: background 0.2s;
+        }
+        .toggle-btn:hover {
+            background: #ffa500;
+        }
+        .header-content {
+            background: #34495e;
+            padding: 1.5em 1.5em 2em 1.5em;
+            text-align: center;
+            transition: max-height 0.4s, opacity 0.4s;
+            z-index: 999;
+        }
+        .header-content.hide {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            padding: 0 1.5em;
+        }
+        .header-content.show {
+            max-height: 300px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <span class="brand">Dayanand Jagdale</span>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Projects</a>
+                <a href="#">Contact</a>
+            </nav>
+            <button class="toggle-btn" onclick="toggleHeaderContent()">Hide Header</button>
+        </div>
+        <div class="header-content show" id="headerContent">
+            <h2>Welcome to My Portfolio</h2>
+            <p>
+                Hi, I'm Dayanand Jagdale. This is a sample navigation header with all requirements:<br>
+                - Navigation links<br>
+                - Brand/Logo<br>
+                - Show/Hide header content button<br>
+                - Responsive and styled<br>
+            </p>
+        </div>
+    </header>
+    <main style="padding:2em;">
+        <h1>Page Content</h1>
+        <p>This is the main content of the page.</p>
+    </main>
+    <script>
+        let headerVisible = true;
+        function toggleHeaderContent() {
+            const content = document.getElementById('headerContent');
+            const btn = document.querySelector('.toggle-btn');
+            headerVisible = !headerVisible;
+            if(headerVisible) {
+                content.classList.remove('hide');
+                content.classList.add('show');
+                btn.textContent = "Hide Header";
+            } else {
+                content.classList.remove('show');
+                content.classList.add('hide');
+                btn.textContent = "Show Header";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main1.css">
+</head>
+<body>
+   
+ <!-- Editor Start-->   
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js' ></script>
+<div class="Input" style ="z-index:-99;">   
+<div style ="z-index:-99;" id="editor" class='same' stype="display:block">
+</div></div>  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js"> </script>
+ <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>  <!--end  Editor--> 
+
+
+ 
+<!-- Two Menu  buttones -->
+<div id="circularMenu" class="circular-menu">
+    <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
+      <i class="fa fa-plus"></i>
+    </a>
+    <menu class="items-wrapper">
+  
+      <a  onclick="openCustomFrame('customFrame5')" class="menu-item fa fa-facebook"></a>
+      <a onclick="openCustomFrame('customFrame6')" class="menu-item fa fa-twitter"></a>
+      <a onclick="openCustomFrame('customFrame7')" class="menu-item fa fa-google-plus"></a>
+      <a onclick="openCustomFrame('customFrame8')" class="menu-item fa fa-linkedin"></a>
+    </menu>
+  </div>
+  
+  
+  <div id="circularMenu1" class="circular-menu circular-menu-left active">
+    <a class="floating-btn" onclick="document.getElementById('circularMenu1').classList.toggle('active');">
+      <i class="fa fa-bars"></i>
+    </a>
+    <menu class="items-wrapper">
+     
+      <a onclick="openCustomFrame('customFrame1')" class="menu-item fa fa-home"></a>
+      <a onclick="openCustomFrame('customFrame2')" class="menu-item fa fa-home"></a>
+     <a onclick="openCustomFrame('customFrame3')" class="menu-item fa fa-home"></a>
+      <a onclick="openCustomFrame('customFrame4')" class="menu-item fa fa-home"></a>
+      <!-- Two Menu  buttones End  -->
+    </menu>
+</div>
+
+
+        <!-- frame 5 online campailar -->
+<div id="customFrameContainer">
+    <div id="customFrame1" class="custom-frame" style="height: 600px ; display: none;">
+        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame1', this.value)" class="custom-size">
+          <span class="-close"  onclick="closeCustomFrame('customFrame1')">&times;</span>  <br><br>
+          </div></div>
+
+<div id="customFrameContainer">
+    <div id="customFrame2" class="custom-frame" style="height: 600px ; display: none;">
+        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame2', this.value)" class="custom-size">
+          <span class="-close"  onclick="closeCustomFrame('customFrame2')">&times;</span>  <br><br>
+          </div></div>
+
+
+<div id="customFrameContainer">
+    <div id="customFrame3" class="custom-frame" style="height: 600px ; display: none;">
+        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame3', this.value)" class="custom-size">
+          <span class="-close"  onclick="closeCustomFrame('customFrame3')">&times;</span>  <br><br>
+          </div></div>
+
+
+<div id="customFrameContainer">
+    <div id="customFrame4" class="custom-frame" style="height: 600px ; display: none;">
+        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame4', this.value)" class="custom-size">
+          <span class="-close"  onclick="closeCustomFrame('customFrame4')">&times;</span>  <br><br>
+          </div></div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="customFrameContainer">
+    <div id="customFrame5" class="custom-frame" style="height: 600px ; display: none;">
+        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame5', this.value)" class="custom-size">
+          <span class="-close"  onclick="closeCustomFrame('customFrame5')">&times;</span>  <br><br>
+          <iframe src="daya.html" width="100%" height="100%"></iframe>
+
+          </div></div>
+
+
+<div id="customFrameContainer">
+    <div id="customFrame6" class="custom-frame" style="height: 600px ; display: none;">
+        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame6', this.value)" class="custom-size">
+          <span class="-close"  onclick="closeCustomFrame('customFrame6')">&times;</span>  <br><br>
+          <h1>Enter HTML:</h1>
+          <textarea class="text" id="htmlCode" rows="10" cols="50"></textarea><br>
+          <h2>Enter File Name:</h2>
+          <input type="text" id="fileName"><br>
+          <button id="downloadButton">Download HTML File</button></center>
+
+
+
+          <code id="codeBlock" onclick="copyCode()" class="copycode">
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;title&gt;Daya&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            &lt;h1&gt;Daya&lt;/h1&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </code>
+          </div></div>
+
+
+<div id="customFrameContainer">
+    <div id="customFrame7" class="custom-frame" style="height: 600px ; display: none;">
+        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame7', this.value)" class="custom-size">
+          <span class="-close"  onclick="closeCustomFrame('customFrame7')">&times;</span>  
+          <br>
+          <center>
+         <h1 style="color: #333;">Notepad</h1>
+         <div>
+             <button onclick="saveNote()">Save</button>
+             <button onclick="deleteNote()">Delete</button>
+             <button onclick="downloadNote()">Download</button>
+             <button onclick="setBold()">Bold</button>
+             <select onchange="changeFontSize(this.value)">
+                 <option value="12">Font Size</option>
+                 <option value="16">16px</option>
+                 <option value="20">20px</option>
+                 <option value="24">24px</option>
+             </select>
+             <input type="color" id="colorPicker" onchange="changeTextColor(this.value)">
+         </div>
+         <div>
+             <div id="pageIndicator">Page 1</div>
+             <button onclick="previousPage()">Previous</button>
+             <button onclick="nextPage()">Next</button>
+           <br>  <br><textarea id="notepad" class="page-transition" rows="10" cols="50"></textarea>
+         </div></center><br><br>
+          </div></div>
+
+
+
+<div id="customFrameContainer">
+    <div id="customFrame8" class="custom-frame" style="height: 600px ; display: none;">
+        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame8', this.value)" class="custom-size">
+          <span class="-close"  onclick="closeCustomFrame('customFrame8')">&times;</span>  <br><br>
+          <iframe style=" width: 100%;height: 100%;" src="https://www.scholarhat.com/compiler/html"></iframe>
+          </div></div>
+
+
+</body>
+
+<script src="main1.js"></script>
+</html>
