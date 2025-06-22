@@ -18,7 +18,7 @@ body { overflow:hidden; margin:0;  }
   scrollbar-width: thin;
     }
   .same { 
-       top:100px;
+       top:120px;
        border :solid 3px;
        margin: 5px; 
        padding: 0px; 
