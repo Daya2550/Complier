@@ -1,133 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="main1.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compiler</title>
+  <link rel="stylesheet" href="main1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<iframe src="heder.html" width="100%" height="100%"></iframe>
 
-   
- <!-- Editor Start-->   
-<script src='https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js' ></script>
-<div class="Input" style ="z-index:-99;">   
-<div style ="z-index:-99;" id="editor" class='same' stype="display:block">
-</div></div>  
- <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js"> </script>
- <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>  <!--end  Editor--> 
+<!-- Header -->
+ <!-- Header: Top and Tool Bars -->
+  <header>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="logo"><i class="fas fa-cube"></i>Codseed</div>
+      <div class="top-buttons">
+        <button class="studio-button" title="Save Project" onclick="openCustomFrame('customFrame10')"><i class="fab fa-html5"></i> </i> HTML</button>
+        <button class="studio-button" title="Export Code" onclick="openCustomFrame('customFrame9')"><i class="fab fa-css3-alt"></i></i> CSS</button>
+        <button class="studio-button" title="Settings" onclick="openCustomFrame('customFrame11')"> <i class="fab fa-js-square"></i>  JS</button>
+        <div class="hamburger" onclick="toggleTools()"><i class="fas fa-bars"></i></div>
+      </div>
+    </div>
+
+<!--     
+    <div class="tool-bar">
+      <div class="studio-section" id="studioTools">
+      
 
 
- 
-<!-- Two Menu  buttones -->
+        <button class="studio-button"><i class="fas fa-align-left"></i> Format</button>
+
+       
+        <button class="studio-button"><i class="fas fa-magic"></i> Apply</button>
+        <button class="studio-button"><i class="fas fa-eye"></i> Preview</button>
+        <button class="studio-button"><i class="fas fa-sync-alt"></i> Reset</button>
+
+      
+        <button class="studio-button"><i class="fas fa-play"></i> Run</button>
+        <button class="studio-button"><i class="fas fa-terminal"></i> Console</button>
+        <button class="studio-button"><i class="fas fa-bug"></i> Debug</button>
+      </div>
+    </div> -->
+  </header>
+
+
+<!-- Ace Editor -->
+<div class="Input" style="z-index:-99;">
+  <div id="editor" class='same' style="display:block; z-index:-99;"></div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+
 <div id="circularMenu" class="circular-menu">
-    <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
-      <i class="fa fa-plus"></i>
-    </a>
-    <menu class="items-wrapper">
-  
-      <a  onclick="openCustomFrame('customFrame5')" class="menu-item fa fa-facebook"></a>
-      <a onclick="openCustomFrame('customFrame6')" class="menu-item fa fa-twitter"></a>
-      <a onclick="openCustomFrame('customFrame7')" class="menu-item fa fa-google-plus"></a>
-      <a onclick="openCustomFrame('customFrame8')" class="menu-item fa fa-linkedin"></a>
-    </menu>
-  </div>
-  
-  
-  <div id="circularMenu1" class="circular-menu circular-menu-left active">
-    <a class="floating-btn" onclick="document.getElementById('circularMenu1').classList.toggle('active');">
-      <i class="fa fa-bars"></i>
-    </a>
-    <menu class="items-wrapper">
-     
-      <a onclick="openCustomFrame('customFrame1')" class="menu-item fa fa-home"></a>
-      <a onclick="openCustomFrame('customFrame2')" class="menu-item fa fa-home"></a>
-     <a onclick="openCustomFrame('customFrame3')" class="menu-item fa fa-home"></a>
-      <a onclick="openCustomFrame('customFrame4')" class="menu-item fa fa-home"></a>
-      <!-- Two Menu  buttones End  -->
-    </menu>
+  <a class="floating-btn" onclick="toggleMenu('circularMenu')">
+    <i class="fa fa-plus"></i>
+  </a>
+  <menu class="items-wrapper">
+    <!-- Online Compiler -->
+    <a onclick="openCustomFrame('customFrame5')" class="menu-item fab fa-codepen" title="Online Compiler"></a>
+    <!-- HTML to File -->
+    <a onclick="openCustomFrame('customFrame6')" class="menu-item fas fa-file-code" title="HTML to File"></a>
+    <!-- Notepad -->
+    <a onclick="openCustomFrame('customFrame7')" class="menu-item fas fa-pen-square" title="Notepad"></a>
+    <!-- Whiteboard -->
+    <a onclick="openCustomFrame('customFrame8')" class="menu-item fas fa-chalkboard" title="Whiteboard"></a>
+  </menu>
 </div>
 
 
-        <!-- frame 5 online campailar -->
+<div id="circularMenu1" class="circular-menu circular-menu-left active">
+  <a class="floating-btn" onclick="toggleMenu('circularMenu1')">
+    <i class="fa fa-bars"></i>
+  </a>
+  <menu class="items-wrapper">
+    <!-- Bootstrap Reference -->
+    <a onclick="openCustomFrame('customFrame1')" class="menu-item fab fa-bootstrap" title="Bootstrap"></a>
+    <!-- Free Templates -->
+    <a onclick="openCustomFrame('customFrame2')" class="menu-item fas fa-palette" title="Templates"></a>
+    <!-- File Transfer Tool -->
+    <a onclick="openCustomFrame('customFrame3')" class="menu-item fas fa-file-upload" title="File Transfer"></a>
+    <!-- WhatsApp-like Tool -->
+    <a onclick="openCustomFrame('customFrame4a')" class="menu-item fab fa-whatsapp" title="WhatsApp Chat"></a>
+  </menu>
+</div>
+
+
+<!-- Custom Frames -->
 <div id="customFrameContainer">
-    <div id="customFrame1" class="custom-frame" style="height: 600px ; display: none;">
-        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame1', this.value)" class="custom-size">
-          <span class="-close"  onclick="closeCustomFrame('customFrame1')">&times;</span>  <br><br>
-                    <iframe src="bootstrap-reference.html" width="100%" height="100%"></iframe>
+  <div id="customFrame1" class="custom-frame" style="display: none;">
+    <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame1', this.value)" class="custom-size">
+    <span class="-close" onclick="closeCustomFrame('customFrame1')">&times;</span><br><br>
+    <iframe src="bootstrap-reference.html" width="100%" height="100%"></iframe>
+  </div>
 
-          </div></div>
+  <div id="customFrame2" class="custom-frame" style="display: none;">
+    <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame2', this.value)" class="custom-size">
+    <span class="-close" onclick="closeCustomFrame('customFrame2')">&times;</span><br><br>
+    <iframe src="free-templates.html" width="100%" height="100%"></iframe>
+  </div>
 
-<div id="customFrameContainer">
-    <div id="customFrame2" class="custom-frame" style="height: 600px ; display: none;">
-        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame2', this.value)" class="custom-size">
-          <span class="-close"  onclick="closeCustomFrame('customFrame2')">&times;</span>  <br><br>
-          <iframe src="ai-generator.html" width="100%" height="100%"></iframe>
-          </div></div>
+  <div id="customFrame3" class="custom-frame" style="display: none;">
+    <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame3', this.value)" class="custom-size">
+    <span class="-close" onclick="closeCustomFrame('customFrame3')">&times;</span><br><br>
+    <!-- <iframe id="w3EditorFrame" src="w3style-editor.html" width="100%" height="100%"></iframe> -->
+     <iframe id="w3EditorFrame" src="https://quickmeet.free.nf" width="100%" height="100%"></iframe>
+  </div>
 
+  <div id="customFrame4a" class="custom-frame" style="display: none;">
+    <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame4a', this.value)" class="custom-size">
+    <span class="-close" onclick="closeCustomFrame('customFrame4a')">&times;</span><br><br>
+    <!-- <iframe src="free-templates.html" width="100%" height="100%" style="border: none;"></iframe> -->
+       <iframe src="https://quickf.free.nf" width="100%" height="100%" style="border: none;"></iframe> 
+  </div>
 
-<div id="customFrameContainer">
-    <div id="customFrame3" class="custom-frame" style="height: 600px ; display: none;">
-        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame3', this.value)" class="custom-size">
-          <span class="-close"  onclick="closeCustomFrame('customFrame3')">&times;</span>  <br><br>
-          </div></div>
+  <div id="customFrame5" class="custom-frame" style="display: none;">
+    <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame5', this.value)" class="custom-size">
+    <span class="-close" onclick="closeCustomFrame('customFrame5')">&times;</span><br><br>
+    <iframe style="width: 100%; height: 100%;" src="https://www.scholarhat.com/compiler/html"></iframe>
+  </div>
 
+  <div id="customFrame6" class="custom-frame" style="display: none;">
+    <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame6', this.value)" class="custom-size">
+    <span class="-close" onclick="closeCustomFrame('customFrame6')">&times;</span><br><br>
+    <iframe src="htmltofile.html" width="100%" height="100%"></iframe>
+  </div>
 
-<div id="customFrameContainer">
-    <div id="customFrame4" class="custom-frame" style="height: 600px ; display: none;">
-        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame4', this.value)" class="custom-size">
-          <span class="-close"  onclick="closeCustomFrame('customFrame4')">&times;</span>  <br><br>
-          </div></div>
+  <div id="customFrame7" class="custom-frame" style="display: none;">
+    <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame7', this.value)" class="custom-size">
+    <span class="-close" onclick="closeCustomFrame('customFrame7')">&times;</span><br><br>
+    <iframe src="notepad.html" width="100%" height="100%"></iframe>
+  </div>
 
-
-
-
-
-
-
-
-
-
-
-<div id="customFrameContainer">
-    <div id="customFrame5" class="custom-frame" style="height: 600px ; display: none;">
-        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame5', this.value)" class="custom-size">
-          <span class="-close"  onclick="closeCustomFrame('customFrame5')">&times;</span>  <br><br>
-          <iframe style=" width: 100%;height: 100%;" src="https://www.scholarhat.com/compiler/html"></iframe>
-
-          </div></div>
-
-
-<div id="customFrameContainer">
-    <div id="customFrame6" class="custom-frame" style="height: 600px ; display: none;">
-        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame6', this.value)" class="custom-size">
-          <span class="-close"  onclick="closeCustomFrame('customFrame6')">&times;</span>  <br><br>
-          <iframe src="htmltofile.html" width="100%" height="100%"></iframe>
-          </div></div>
-
-
-<div id="customFrameContainer">
-    <div id="customFrame7" class="custom-frame" style="height: 600px ; display: none;">
-        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame7', this.value)" class="custom-size">
-          <span class="-close"  onclick="closeCustomFrame('customFrame7')">&times;</span>  
-          <iframe src="notepad.html" width="100%" height="100%"></iframe>
-          </div></div>
+  <div id="customFrame8" class="custom-frame" style="display: none;">
+    <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame8', this.value)" class="custom-size">
+    <span class="-close" onclick="closeCustomFrame('customFrame8')">&times;</span><br><br>
+    <iframe src="https://witeboard.com/" width="100%" height="100%" allow="clipboard-write" allowfullscreen></iframe>
+  </div>
+</div>
 
 
 
-<div id="customFrameContainer">
-    <div id="customFrame8" class="custom-frame" style="height: 600px ; display: none;">
-        <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame8', this.value)" class="custom-size">
-          <span class="-close"  onclick="closeCustomFrame('customFrame8')">&times;</span>  <br><br>
-        
-          <iframe src="https://djtravels.rf.gd" width="100%" height="100%" allow="clipboard-write" allowfullscreen></iframe>
 
+ <div id="customFrame9" class="custom-frame" style="display: none;">
+    <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame9', this.value)" class="custom-size">
+    <span class="-close" onclick="closeCustomFrame('customFrame9')">&times;</span><br><br>
+    <iframe src="css.html" width="100%" height="100%" allow="clipboard-write" allowfullscreen></iframe>
+  </div>
+</div>
 
-          </div></div>
+<div id="customFrame10" class="custom-frame" style="display: none;">
+    <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame10', this.value)" class="custom-size">
+    <span class="-close" onclick="closeCustomFrame('customFrame10')">&times;</span><br><br>
+    <iframe src="h.html" width="100%" height="100%" allow="clipboard-write" allowfullscreen></iframe>
+  </div>
+</div>
 
+<div id="customFrame11" class="custom-frame" style="display: none;">
+    <input type="range" min="25" max="750" value="600" oninput="resizeCustomFrame('customFrame11', this.value)" class="custom-size">
+    <span class="-close" onclick="closeCustomFrame('customFrame11')">&times;</span><br><br>
+    <iframe src="js.html" width="100%" height="100%" allow="clipboard-write" allowfullscreen></iframe>
+  </div>
+</div>
+<!-- JavaScript Functions -->
+<script>
+function openCustomFrame(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = "block";
+}
 
-</body>
+function closeCustomFrame(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = "none";
+}
+
+function resizeCustomFrame(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.style.height = value + "px";
+}
+
+function toggleMenu(menuId) {
+  document.getElementById(menuId).classList.toggle('active');
+}
+</script>
 
 <script src="main1.js"></script>
+
+</body>
 </html>

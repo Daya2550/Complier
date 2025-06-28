@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Load Tutorial in iframe</title>
+  <script>
+    function loadTutorial(page) {
+      document.getElementById('tutorialFrame').src = page;
+    }
+
+    // Automatically load on page load
+    window.onload = function () {
+      loadTutorial('w3-html.html');
+    };
+  </script>
+</head>
+<body>
+
+
+  <!-- iframe where tutorial will be loaded -->
+  <iframe id="tutorialFrame" width="100%" height="600px" style="border:1px solid #ccc;"></iframe>
+
+</body>
+</html>

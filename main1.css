@@ -18,7 +18,7 @@ body { overflow:hidden; margin:0;  }
   scrollbar-width: thin;
     }
   .same { 
-       top:120px;
+       top:60px;
        border :solid 3px;
        margin: 5px; 
        padding: 0px; 
@@ -347,7 +347,105 @@ body { overflow:hidden; margin:0;  }
         }
 
 
+ 
 
+    header {
+      background-color: #1e1e1e;
+      color: white;
+      width: 100%;
+     
+    }
+
+
+    header {
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+}
+
+.tool-bar {
+  box-shadow: none !important;
+}
+
+body > *:not(header) {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+
+    .top-bar, .tool-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+
+    .top-bar {
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .top-buttons, .studio-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .studio-section {
+      gap: 16px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .studio-button {
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .studio-button:hover {
+      background-color: #005bb5;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .tool-bar .studio-section {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .tool-bar .studio-section.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
 
 
 

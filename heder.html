@@ -5,152 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Web Studio - Two-Level Header</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="main1.js">
   <style>
   
-  
-
-    header {
-      background-color: #1e1e1e;
-      color: white;
-      width: 100%;
-     
-    }
-
-
-    header {
-  box-shadow: none !important;
-  margin-bottom: 0 !important;
-}
-
-.tool-bar {
-  box-shadow: none !important;
-}
-
-body > *:not(header) {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-
-    .top-bar, .tool-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      flex-wrap: wrap;
-    }
-
-    .top-bar {
-      border-bottom: 1px solid #333;
-    }
-
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .top-buttons, .studio-section {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .studio-section {
-      gap: 16px;
-      flex-wrap: wrap;
-      width: 100%;
-    }
-
-    .studio-button {
-      background-color: #0066cc;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: background-color 0.3s ease;
-    }
-
-    .studio-button:hover {
-      background-color: #005bb5;
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .tool-bar .studio-section {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      .tool-bar .studio-section.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
-    }
+ 
   </style>
 </head>
 <body>
 
-  <!-- Header: Top and Tool Bars -->
-  <header>
-    <!-- Top Bar -->
-    <div class="top-bar">
-      <div class="logo"><i class="fas fa-cube"></i> Web Studio</div>
-      <div class="top-buttons">
-        <button class="studio-button" title="Save Project"><i class="fas fa-save"></i> Save</button>
-        <button class="studio-button" title="Export Code"><i class="fas fa-file-export"></i> Export</button>
-        <button class="studio-button" title="Settings"><i class="fas fa-cog"></i> Settings</button>
-        <div class="hamburger" onclick="toggleTools()"><i class="fas fa-bars"></i></div>
-      </div>
-    </div>
-
-    <!-- Tool Bar -->
-    <div class="tool-bar">
-      <div class="studio-section" id="studioTools">
-        <!-- HTML Tools -->
-        <button class="studio-button"><i class="fas fa-plus"></i> Add Tag</button>
-        <button class="studio-button"><i class="fas fa-align-left"></i> Format</button>
-
-        <!-- CSS Tools -->
-        <button class="studio-button"><i class="fas fa-magic"></i> Apply</button>
-        <button class="studio-button"><i class="fas fa-eye"></i> Preview</button>
-        <button class="studio-button"><i class="fas fa-sync-alt"></i> Reset</button>
-
-        <!-- JavaScript Tools -->
-        <button class="studio-button"><i class="fas fa-play"></i> Run</button>
-        <button class="studio-button"><i class="fas fa-terminal"></i> Console</button>
-        <button class="studio-button"><i class="fas fa-bug"></i> Debug</button>
-      </div>
-    </div>
-  </header>
-
-
-
-  <script>
-    function toggleTools() {
-      const tools = document.getElementById("studioTools");
-      tools.classList.toggle("active");
-    }
-  </script>
+ 
 
 </body>
 </html>

@@ -190,3 +190,31 @@ function copyCode() {
         alert('Code copied to clipboard!');
     }
   
+
+  function openW3EditorFrame() {
+    document.getElementById('customFrame3').style.display = 'block';
+  }
+
+  function resizeCustomFrame(id, value) {
+    document.getElementById(id).style.height = value + "px";
+  }
+
+  function closeCustomFrame(id) {
+    document.getElementById(id).style.display = "none";
+    document.getElementById('w3EditorFrame').src = ""; // Clear frame on close
+  }
+
+  function showW3Editor() {
+    const frame = document.getElementById('customFrame3');
+    const iframe = document.getElementById('w3EditorFrame');
+    frame.style.display = 'block'; // Show the container
+    iframe.src = "w3style-editor.html"; // Load the editor inside
+  }
+
+  function resizeCustomFrame(id, value) {
+  document.getElementById(id).style.height = value + 'px';
+}
+
+function closeCustomFrame(id) {
+  document.getElementById(id).style.display = 'none';
+}

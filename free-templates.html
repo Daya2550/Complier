@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Website Templates</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(to right, #f9f9f9, #eef2f3);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .template-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .template-card {
+      background-color: #fff;
+      border-radius: 15px;
+      width: 250px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    .template-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .template-icon {
+      font-size: 48px;
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .template-card h3 {
+      font-size: 20px;
+      color: #34495e;
+      margin-bottom: 20px;
+    }
+
+    .template-card a {
+      display: inline-block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #007bff;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .template-card a:hover {
+      background-color: #0056b3;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .template-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>✨ Free Website Templates Gallery</h2>
+
+  <div class="template-grid">
+    
+    <div class="template-card">
+      <i class="fas fa-city template-icon"></i>
+      <h3>Architect</h3>
+      <a href="https://www.w3schools.com/w3css/w3css_templates.asp" target="_blank">View on W3Schools</a>
+    </div>
+
+    <div class="template-card">
+      <i class="fas fa-rocket template-icon"></i>
+      <h3>Startuply</h3>
+      <a href="https://htmlrev.com/free-bootstrap-templates.html" target="_blank">View on HTMLRev</a>
+    </div>
+
+    <div class="template-card">
+      <i class="fas fa-camera-retro template-icon"></i>
+      <h3>Story</h3>
+      <a href="https://html5up.net/story" target="_blank">View on HTML5 UP</a>
+    </div>
+
+    <div class="template-card">
+      <i class="fas fa-briefcase template-icon"></i>
+      <h3>Creative Agency</h3>
+      <a href="https://colorlib.com/wp/templates/" target="_blank">View on Colorlib</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

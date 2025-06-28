@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Tutorial</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+  }
+
+  /* Sidebar Styling */
+  .sidebar {
+    width: 280px;
+    background-color: #f8f9fa;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    padding-top: 20px;
+    border-right: 1px solid #ddd;
+    z-index: 1000;
+  }
+
+  .sidebar a {
+    display: block;
+    color: #212529;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 16px;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .sidebar a:hover {
+    background-color: #0d6efd;
+    color: white;
+  }
+
+  /* Main Content Styling */
+  .main-content {
+    margin-left: 280px;
+    padding: 30px;
+    background-color: #fff;
+    min-height: 100vh;
+  }
+
+  section {
+    margin-bottom: 40px;
+    padding: 20px 25px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+  }
+
+  h1, h2, h3 {
+    color: #0d6efd;
+    margin-top: 0;
+  }
+
+  p {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f1f1f1;
+  }
+
+  /* Code and Pre Elements */
+  code {
+    background-color: #f4f4f4;
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: #d63384;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  pre {
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-left: 4px solid #0d6efd;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+    font-size: 15px;
+  }
+
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: relative;
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .main-content {
+      margin-left: 0;
+      padding: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <a href="#css-introduction">CSS Introduction</a>
+  <a href="#css-syntax">CSS Syntax</a>
+  <a href="#css-colors">CSS Colors</a>
+  <a href="#css-backgrounds">CSS Backgrounds</a>
+  <a href="#css-borders">CSS Borders</a>
+  <a href="#css-padding">CSS Padding</a>
+  <a href="#css-text">CSS Text</a>
+  <a href="#css-fonts">CSS Fonts</a>
+  <a href="#css-icons">CSS Icons</a>
+  <a href="#css-links">CSS Links</a>
+  <a href="#css-lists">CSS Lists</a>
+  <a href="#css-tables">CSS Tables</a>
+  <a href="#css-display">CSS Display</a>
+  <a href="#css-max-width">CSS Max-width</a>
+  <a href="#css-inline-block">CSS Inline-block</a>
+  <a href="#css-navigation-bar">CSS Navigation Bar</a>
+  <a href="#css-dropdowns">CSS Dropdowns</a>
+  <a href="#css-attr-selectors">CSS Attr Selectors</a>
+  <a href="#css-forms">CSS Forms</a>
+  <a href="#css-performance">CSS Performance</a>
+  <a href="#css-advanced">CSS Advanced</a>
+  <a href="#css-color-keywords">CSS Color Keywords</a>
+  <a href="#css-gradients">CSS Gradients</a>
+  <a href="#css-shadows">CSS Shadows</a>
+  <a href="#css-text-effects">CSS Text Effects</a>
+  <a href="#css-web-fonts">CSS Web Fonts</a>
+  <a href="#css-2d-transforms">CSS 2D Transforms</a>
+  <a href="#css-3d-transforms">CSS 3D Transforms</a>
+  <a href="#css-transitions">CSS Transitions</a>
+  <a href="#css-animations">CSS Animations</a>
+  <a href="#css-tooltips">CSS Tooltips</a>
+  <a href="#css-image-styling">CSS Image Styling</a>
+  <a href="#css-image-centering">CSS Image Centering</a>
+  <a href="#css-image-filters">CSS Image Filters</a>
+  <a href="#css-image-shapes">CSS Image Shapes</a>
+  <a href="#css-flexbox">CSS Flexbox</a>
+  <a href="#flexbox-intro">Flexbox Intro</a>
+  <a href="#flex-container">Flex Container</a>
+  <a href="#flex-items">Flex Items</a>
+  <a href="#flex-responsive">Flex Responsive</a>
+  <a href="#css-grid">CSS Grid</a>
+  <a href="#grid-columns-rows">Grid Columns/Rows</a>
+  <a href="#grid-container">Grid Container</a>
+</div>
+
+
+  <div class="main-content">
+
+<section id="css-home">
+  <h1>CSS Introduction</h1>
+  <p><strong>CSS</strong> is the language we use to style a Web page.</p>
+
+  <h2>What is CSS?</h2>
+  <ul>
+    <li>CSS stands for <strong>Cascading Style Sheets</strong></li>
+    <li>CSS describes how HTML elements are displayed on screen, paper, or other media</li>
+    <li>CSS saves a lot of work and can control the layout of multiple web pages all at once</li>
+    <li>External stylesheets are stored in .css files</li>
+  </ul>
+
+  <h2>Why Use CSS?</h2>
+  <p>CSS is used to define styles for your web pages, including design, layout, and display variations for different devices and screen sizes.</p>
+
+  <h2>CSS Example</h2>
+  <pre><code>body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}</code></pre>
+
+  <h2>CSS Solved a Big Problem</h2>
+  <p>HTML was <strong>never</strong> intended to contain tags for formatting web pages. It was created to describe the content of a page, like:</p>
+  <pre><code>&lt;h1&gt;This is a heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+
+  <p>When tags like <code>&lt;font&gt;</code> and color attributes were added in HTML 3.2, it created difficulties for developers. Every page required manual styling, which was hard to maintain.</p>
+
+  <p>To solve this issue, the <strong>World Wide Web Consortium (W3C)</strong> introduced CSS. It moved the styling away from the HTML, making pages cleaner and easier to manage.</p>
+</section>
+
+
+    <section id="css-syntax">
+      <h1>CSS Syntax</h1>
+      <p>A CSS rule consists of a selector and a declaration block.</p>
+      <pre>
+selector {
+  property: value;
+}
+      </pre>
+    </section>
+
+    <section id="css-colors">
+  <h1>CSS Colors</h1>
+  <p>CSS colors are used to set the color of text, backgrounds, borders, and other elements.</p>
+
+  <h2>Color Values</h2>
+  <ul>
+    <li><strong>Named colors:</strong> red, green, blue, etc.</li>
+    <li><strong>HEX:</strong> #ff0000</li>
+    <li><strong>RGB:</strong> rgb(255, 0, 0)</li>
+    <li><strong>RGBA:</strong> rgba(255, 0, 0, 0.5)</li>
+    <li><strong>HSL:</strong> hsl(0, 100%, 50%)</li>
+    <li><strong>HSLA:</strong> hsla(0, 100%, 50%, 0.5)</li>
+  </ul>
+
+  <h2>Example: Text Color</h2>
+  <pre><code>h1 {
+  color: blue;
+}</code></pre>
+
+  <h2>Example: Background Color</h2>
+  <pre><code>body {
+  background-color: lightyellow;
+}</code></pre>
+
+  <h2>Example: Border Color</h2>
+  <pre><code>div {
+  border: 2px solid green;
+}</code></pre>
+
+  <h2>Transparent Colors</h2>
+  <p>Use RGBA or HSLA values to add transparency:</p>
+  <pre><code>p {
+  background-color: rgba(255, 0, 0, 0.3);
+}</code></pre>
+
+  <h2>CSS Color Keywords</h2>
+  <p>Examples: <code>red</code>, <code>black</code>, <code>white</code>, <code>lime</code>, <code>navy</code>, etc.</p>
+</section>
+  
+    <section id="css-backgrounds">
+      <h1>CSS Backgrounds</h1>
+      <p>Use background properties to set background color, image, position, repeat, and more.</p>
+      <pre>
+body {
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+      </pre>
+    </section>
+    <section id="css-borders">
+  <h1>CSS Borders</h1>
+  <p>CSS borders allow you to define the style, width, and color of an element's border.</p>
+  <pre>
+div {
+  border: 2px solid black;
+}
+
+p {
+  border: dashed blue 3px;
+}
+
+h1 {
+  border: double green 4px;
+}
+  </pre>
+</section>
+
+<section id="css-padding">
+  <h1>CSS Padding</h1>
+  <p>Padding is the space between the content and the border of an element. You can set padding on all sides or individually.</p>
+  <pre>
+div {
+  padding: 20px;
+}
+
+p {
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+}
+  </pre>
+</section>
+<section id="css-text">
+  <h1>CSS Text</h1>
+  <p>CSS text properties are used to control the appearance of text such as alignment, decoration, spacing, and transformation.</p>
+  <pre>
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: darkblue;
+}
+
+p {
+  text-indent: 40px;
+  letter-spacing: 2px;
+  line-height: 1.6;
+  text-decoration: underline;
+}
+  </pre>
+</section>
+
+    <section id="css-fonts">
+      <h1>CSS Fonts</h1>
+      <p>Use <code>font-family</code> to change text font.</p>
+      <pre>
+p {
+  font-family: Arial, sans-serif;
+}
+      </pre>
+    </section>
+<section id="css-icons">
+  <h1>CSS Icons</h1>
+  <p>CSS can be used with icon libraries like Font Awesome to add scalable vector icons to your web pages.</p>
+  <p>To use icons, include the library (e.g., Font Awesome) and apply classes to elements like <code>&lt;i&gt;</code> or <code>&lt;span&gt;</code>.</p>
+  <pre>
+<!-- Include Font Awesome in the <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Example icons -->
+<i class="fas fa-home"></i> Home  
+<i class="fas fa-user"></i> Profile  
+<i class="fas fa-envelope"></i> Contact
+  </pre>
+</section>
+<section id="css-links">
+  <h1>CSS Links</h1>
+  <p>CSS can style different states of HTML links using pseudo-classes like <code>:link</code>, <code>:visited</code>, <code>:hover</code>, and <code>:active</code>.</p>
+
+  <pre>
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: purple;
+}
+
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+a:active {
+  color: green;
+}
+  </pre>
+
+  <p>Example:</p>
+  <a href="https://www.example.com" target="_blank">Visit Example</a>
+</section>
+<section id="css-lists">
+  <h1>CSS Lists</h1>
+  <p>CSS allows you to style list items, list markers, and control the list appearance using properties like <code>list-style-type</code>, <code>list-style-position</code>, and <code>list-style-image</code>.</p>
+
+  <pre>
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+ol {
+  list-style-type: upper-roman;
+}
+  </pre>
+
+  <p>Example:</p>
+  <ul>
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Mango</li>
+  </ul>
+
+  <ol>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ol>
+</section>
+
+<section id="css-tables">
+  <h1>CSS Tables</h1>
+  <p>CSS allows you to control the layout and style of tables using properties like <code>border</code>, <code>padding</code>, <code>text-align</code>, and <code>border-collapse</code>.</p>
+
+  <pre>
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+  </pre>
+
+  <p>Example:</p>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Subject</th>
+      <th>Marks</th>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>Math</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <td>Lisa</td>
+      <td>English</td>
+      <td>88</td>
+    </tr>
+  </table>
+</section>
+
+<section id="css-display">
+  <h1>CSS Display</h1>
+  <p>The <code>display</code> property defines how an element is displayed on the page. Common values are <code>block</code>, <code>inline</code>, <code>inline-block</code>, <code>none</code>, and <code>flex</code>.</p>
+
+  <pre>
+.block {
+  display: block;
+  background-color: lightblue;
+  padding: 10px;
+}
+
+.inline {
+  display: inline;
+  background-color: lightgreen;
+  padding: 5px;
+}
+
+.none {
+  display: none;
+}
+  </pre>
+
+  <p>Example:</p>
+  <div class="block">This is block</div>
+  <span class="inline">This is inline</span>
+  <div class="none">This won't be visible</div>
+</section>
+
+<section id="css-max-width">
+  <h1>CSS Max-width</h1>
+  <p>The <code>max-width</code> property sets the maximum width of an element. It helps prevent content from stretching too wide, improving readability on large screens.</p>
+
+  <pre>
+.container {
+  max-width: 600px;
+  margin: auto;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+  </pre>
+
+  <p>Example:</p>
+  <div class="container">
+    <p>This container has a max-width of 600px. It will not grow wider than that even on large screens.</p>
+  </div>
+</section>
+
+<section id="css-inline-block">
+  <h1>CSS Inline-block</h1>
+  <p>The <code>display: inline-block;</code> property allows an element to be formatted like an inline element, but it can accept width and height values like a block element.</p>
+
+  <pre>
+.box {
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  line-height: 100px;
+  margin: 10px;
+}
+  </pre>
+
+  <p>Example:</p>
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+</section>
+
+<section id="css-navigation-bar">
+  <h1>CSS Navigation Bar</h1>
+  <p>The <code>display: inline-block;</code> property is used here to display the navigation links side by side while allowing block styling like padding and margins.</p>
+
+  <pre>
+.navbar a {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+.navbar a:hover {
+  background-color: #4CAF50;
+}
+  </pre>
+
+  <p>Example:</p>
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</section>
+
+<section id="css-dropdowns">
+  <h1>CSS Dropdowns</h1>
+  <p>CSS dropdowns allow you to create menus that show hidden content when hovered or clicked.</p>
+
+  <p>Example:</p>
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+    }
+  </style>
+
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+
+  <pre>
+/* CSS */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  </pre>
+</section>
+
+<section id="css-attr-selectors">
+  <h1>CSS Attribute Selectors</h1>
+  <p>CSS attribute selectors allow you to select elements based on the presence or value of their attributes.</p>
+
+  <p>Example:</p>
+  <style>
+    a[target] {
+      color: green;
+    }
+
+    input[type="text"] {
+      background-color: lightyellow;
+    }
+
+    img[alt~="logo"] {
+      border: 2px solid blue;
+    }
+  </style>
+
+  <p><a href="https://example.com" target="_blank">Open in new tab</a></p>
+  <input type="text" placeholder="Text input">
+  <img src="logo.png" alt="company logo" width="100">
+
+  <pre>
+/* CSS Examples */
+a[target] {
+  color: green;
+}
+
+input[type="text"] {
+  background-color: lightyellow;
+}
+
+img[alt~="logo"] {
+  border: 2px solid blue;
+}
+  </pre>
+</section>
+
+<section id="css-forms">
+  <h1>CSS Forms</h1>
+  <p>CSS can be used to style form elements like input fields, buttons, labels, etc., to improve the user experience and visual design.</p>
+
+  <style>
+    form {
+      max-width: 400px;
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Your email">
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <pre>
+form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+input[type="text"], input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+}
+  </pre>
+</section>
+
+<section id="css-performance">
+  <h1>CSS Performance</h1>
+  <p>Optimizing CSS improves website speed and user experience. Clean, efficient CSS reduces rendering time and ensures better performance.</p>
+
+  <ul>
+    <li>🟢 Minimize the number of CSS files (combine if possible)</li>
+    <li>🟢 Use shorthand properties (e.g., <code>margin: 10px 20px;</code>)</li>
+    <li>🟢 Avoid overly specific selectors and deep nesting</li>
+    <li>🟢 Remove unused CSS using tools like PurgeCSS</li>
+    <li>🟢 Use external stylesheets with caching benefits</li>
+    <li>🟢 Place critical CSS inline and defer non-essential styles</li>
+  </ul>
+
+  <h3>Example: Shorthand vs Longhand</h3>
+  <pre>
+/* Longhand */
+margin-top: 10px;
+margin-right: 20px;
+margin-bottom: 10px;
+margin-left: 20px;
+
+/* Shorthand */
+margin: 10px 20px;
+  </pre>
+
+  <h3>Example: Minified CSS</h3>
+  <pre>
+/* Before */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* After (Minified) */
+body{background-color:white;color:black}
+  </pre>
+</section>
+
+<section id="css-advanced">
+  <h1>CSS Advanced</h1>
+  <p>CSS Advanced covers modern styling techniques such as gradients, shadows, transitions, transforms, and animations that enhance the look and interactivity of web pages.</p>
+
+  <h3>🎨 CSS Gradient Background</h3>
+  <pre>
+body {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+  </pre>
+
+  <h3>💡 Box Shadow Example</h3>
+  <pre>
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+}
+  </pre>
+
+  <h3>🔄 CSS Transition</h3>
+  <pre>
+button {
+  background-color: blue;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darkblue;
+}
+  </pre>
+
+  <h3>🔁 CSS Animation</h3>
+  <pre>
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animated-box {
+  animation: slideIn 0.5s ease-out;
+}
+  </pre>
+</section>
+
+<section id="css-color-keywords">
+  <h1>CSS Color Keywords</h1>
+  <p>CSS supports a list of predefined color names (keywords) like <code>red</code>, <code>blue</code>, <code>green</code>, <code>orange</code>, and many more.</p>
+
+  <h3>🎨 Example: Using Color Keywords</h3>
+  <pre>
+h1 {
+  color: navy;
+}
+
+p {
+  background-color: lightgreen;
+  color: maroon;
+}
+  </pre>
+
+  <p>There are over 140 standard color keywords supported in CSS.</p>
+</section>
+
+<section id="css-gradients">
+  <h1>CSS Gradients</h1>
+  <p>CSS gradients let you display smooth transitions between two or more specified colors without needing an image.</p>
+
+  <h3>🌈 Example: Linear Gradient</h3>
+  <pre>
+div {
+  height: 200px;
+  background: linear-gradient(to right, red, yellow);
+}
+  </pre>
+
+  <h3>🎨 Example: Radial Gradient</h3>
+  <pre>
+div {
+  height: 200px;
+  background: radial-gradient(circle, blue, white);
+}
+  </pre>
+
+  <p>You can also create repeating gradients using <code>repeating-linear-gradient</code> or <code>repeating-radial-gradient</code>.</p>
+</section>
+
+<section id="css-shadows">
+  <h1>CSS Shadows</h1>
+  <p>CSS allows you to add shadow effects to text and elements using <code>text-shadow</code> and <code>box-shadow</code>.</p>
+
+  <h3>🖋️ Example: Text Shadow</h3>
+  <pre>
+h1 {
+  text-shadow: 2px 2px 5px gray;
+}
+  </pre>
+
+  <h3>📦 Example: Box Shadow</h3>
+  <pre>
+div {
+  width: 200px;
+  height: 100px;
+  background-color: lightblue;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+  </pre>
+
+  <p>Shadows add depth and emphasis to elements, making your design more visually appealing.</p>
+</section>
+
+<section id="css-text-effects">
+  <h1>CSS Text Effects</h1>
+  <p>CSS provides several effects to enhance the appearance of text, such as shadows, transformations, and spacing.</p>
+
+  <h3>✨ Example: Shadow Effect</h3>
+  <pre>
+h1 {
+  text-shadow: 3px 3px 5px #999;
+}
+  </pre>
+
+  <h3>🔠 Example: Uppercase Transform</h3>
+  <pre>
+p {
+  text-transform: uppercase;
+}
+  </pre>
+
+  <h3>🔤 Example: Letter Spacing</h3>
+  <pre>
+p {
+  letter-spacing: 2px;
+}
+  </pre>
+
+  <p>Use these effects to make text more engaging and improve readability.</p>
+</section>
+
+<section id="css-web-fonts">
+  <h1>CSS Web Fonts</h1>
+  <p>Web fonts allow you to use custom fonts on your website. Use the <code>@font-face</code> rule or import from services like Google Fonts.</p>
+
+  <h3>🔤 Example: Using Google Fonts</h3>
+  <pre>
+<!-- In the &lt;head&gt; -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<!-- In CSS -->
+body {
+  font-family: 'Roboto', sans-serif;
+}
+  </pre>
+
+  <h3>📝 Example: @font-face Rule</h3>
+  <pre>
+@font-face {
+  font-family: 'MyFont';
+  src: url('myfont.woff2') format('woff2');
+}
+
+p {
+  font-family: 'MyFont', sans-serif;
+}
+  </pre>
+
+  <p>Using web fonts ensures consistent typography across devices without relying on system fonts.</p>
+</section>
+
+<section id="css-2d-transforms">
+  <h1>CSS 2D Transforms</h1>
+  <p>CSS 2D transforms allow you to move, rotate, scale, and skew elements in a 2D space using the <code>transform</code> property.</p>
+
+  <h3>🔄 Example: Translate</h3>
+  <pre>
+div {
+  transform: translate(50px, 20px); /* Moves the element */
+}
+  </pre>
+
+  <h3>🔁 Example: Rotate</h3>
+  <pre>
+div {
+  transform: rotate(30deg); /* Rotates element 30 degrees */
+}
+  </pre>
+
+  <h3>📏 Example: Scale</h3>
+  <pre>
+div {
+  transform: scale(1.5); /* Increases size 1.5x */
+}
+  </pre>
+
+  <h3>📐 Example: Skew</h3>
+  <pre>
+div {
+  transform: skew(20deg, 10deg); /* Skews element */
+}
+  </pre>
+
+  <p>Multiple transforms can be combined like this:</p>
+  <pre>
+div {
+  transform: rotate(15deg) scale(1.2);
+}
+  </pre>
+</section>
+
+<section id="css-3d-transforms">
+  <h1>CSS 3D Transforms</h1>
+  <p>CSS 3D transforms allow you to manipulate elements in three-dimensional space using the <code>transform</code> property with perspective.</p>
+
+  <h3>📦 Adding Perspective</h3>
+  <pre>
+div {
+  perspective: 500px;
+}
+  </pre>
+
+  <h3>🔁 Rotate X-Axis</h3>
+  <pre>
+div {
+  transform: rotateX(45deg);
+}
+  </pre>
+
+  <h3>🔁 Rotate Y-Axis</h3>
+  <pre>
+div {
+  transform: rotateY(45deg);
+}
+  </pre>
+
+  <h3>🔁 Rotate Z-Axis</h3>
+  <pre>
+div {
+  transform: rotateZ(45deg);
+}
+  </pre>
+
+  <p>To apply multiple 3D transformations:</p>
+  <pre>
+div {
+  transform: rotateX(20deg) rotateY(30deg);
+}
+  </pre>
+
+  <p><strong>Note:</strong> Always apply <code>perspective</code> to the parent element to view the 3D effect properly.</p>
+</section>
+
+<section id="css-transitions">
+  <h1>CSS Transitions</h1>
+  <p>CSS transitions allow you to smoothly change property values over a specific duration.</p>
+
+  <h3>✨ Basic Example</h3>
+  <p>When you hover over the element, its background color changes smoothly:</p>
+  <pre>
+div {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: background-color 0.5s ease;
+}
+
+div:hover {
+  background-color: red;
+}
+  </pre>
+
+  <h3>⏱ Transition Multiple Properties</h3>
+  <pre>
+div {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: width 1s, height 1s, transform 0.5s;
+}
+
+div:hover {
+  width: 200px;
+  height: 200px;
+  transform: rotate(15deg);
+}
+  </pre>
+
+  <h3>⚙️ Transition Timing Functions</h3>
+  <ul>
+    <li><code>ease</code> – default</li>
+    <li><code>linear</code> – same speed from start to end</li>
+    <li><code>ease-in</code> – starts slow, ends fast</li>
+    <li><code>ease-out</code> – starts fast, ends slow</li>
+    <li><code>ease-in-out</code> – slow at start and end</li>
+  </ul>
+
+  <p><strong>Tip:</strong> Use <code>transition</code> for hover effects, animations, and smoother UI interactions.</p>
+</section>
+
+<section id="css-animations">
+  <h1>CSS Animations</h1>
+  <p>CSS animations let you animate transitions from one CSS style configuration to another.</p>
+
+  <h3>🎬 Basic Animation Example</h3>
+  <p>This example makes a box move from left to right:</p>
+  <pre>
+div {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  position: relative;
+  animation-name: slide;
+  animation-duration: 3s;
+}
+
+@keyframes slide {
+  from { left: 0px; }
+  to { left: 300px; }
+}
+  </pre>
+
+  <h3>🔁 Repeat Animation</h3>
+  <p>Use <code>animation-iteration-count</code> to repeat the animation:</p>
+  <pre>
+div {
+  animation-iteration-count: infinite;
+}
+  </pre>
+
+  <h3>⏱ Other Animation Properties</h3>
+  <ul>
+    <li><code>animation-delay</code> – delay before animation starts</li>
+    <li><code>animation-direction</code> – run in reverse or alternate</li>
+    <li><code>animation-timing-function</code> – speed curve</li>
+    <li><code>animation-fill-mode</code> – styles before/after animation</li>
+  </ul>
+
+  <p><strong>Tip:</strong> Combine animations with transitions for advanced effects.</p>
+</section>
+
+<section id="css-tooltips">
+  <h1>CSS Tooltips</h1>
+  <p>CSS Tooltips are used to show informative text when users hover over an element.</p>
+
+  <h3>📌 Basic Tooltip Example</h3>
+  <p>Hover over the word <span class="tooltip">tooltip<span class="tooltiptext">This is a tooltip!</span></span> to see it in action.</p>
+
+  <style>
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: help;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 140px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      padding: 6px 0;
+      border-radius: 6px;
+
+      position: absolute;
+      z-index: 1;
+      bottom: 125%; /* Position above */
+      left: 50%;
+      margin-left: -70px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+
+  <p><strong>Tip:</strong> You can change the position, color, and animation of the tooltip using CSS.</p>
+</section>
+
+<section id="css-image-styling">
+  <h1>CSS Image Styling</h1>
+  <p>CSS allows you to style images with borders, rounded corners, shadows, filters, and more.</p>
+
+  <h3>📌 Example: Styled Image</h3>
+  <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Sample Image" class="styled-img">
+
+  <style>
+    .styled-img {
+      width: 300px;
+      border: 4px solid #4CAF50;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .styled-img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+
+  <p><strong>Tip:</strong> You can use <code>border-radius</code> for rounded corners, <code>box-shadow</code> for shadows, and <code>transform</code> for hover effects.</p>
+</section>
+
+<section id="css-image-centering">
+  <h1>CSS Image Centering</h1>
+  <p>You can center images horizontally using CSS with different techniques.</p>
+
+  <h3>📌 Example 1: Center with <code>text-align</code></h3>
+  <div style="text-align: center;">
+    <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Fjord" width="300">
+  </div>
+
+  <h3>📌 Example 2: Center with <code>margin: auto</code> (block-level)</h3>
+  <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Fjord" width="300" class="centered-img">
+
+  <style>
+    .centered-img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
+  <p><strong>Note:</strong> The second method works only when the image is set to <code>display: block</code>.</p>
+</section>
+
+<section id="css-image-filters">
+  <h1>CSS Image Filters</h1>
+  <p>CSS filters let you apply graphical effects like blur, grayscale, brightness, and contrast to images.</p>
+
+  <h3>📌 Example: Grayscale & Blur</h3>
+  <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Fjord" width="300" class="grayscale-img">
+  <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Fjord" width="300" class="blur-img">
+
+  <style>
+    .grayscale-img {
+      filter: grayscale(100%);
+      margin: 10px;
+    }
+
+    .blur-img {
+      filter: blur(4px);
+      margin: 10px;
+    }
+  </style>
+
+  <p><strong>Other Filters:</strong> <code>brightness()</code>, <code>contrast()</code>, <code>sepia()</code>, <code>invert()</code>, and more.</p>
+</section>
+
+<section id="css-flexbox">
+  <h1>CSS Flexbox</h1>
+  <p>CSS Flexbox is a layout model that makes it easier to design flexible responsive layout structures without using float or positioning.</p>
+
+  <h3>📌 Example: Flex Container with Items</h3>
+  <div class="flex-container">
+    <div class="flex-item">Box 1</div>
+    <div class="flex-item">Box 2</div>
+    <div class="flex-item">Box 3</div>
+  </div>
+
+  <style>
+    .flex-container {
+      display: flex;
+      justify-content: space-around;
+      background-color: #f2f2f2;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .flex-item {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      width: 100px;
+      border-radius: 5px;
+    }
+  </style>
+
+  <p>In this example, the <code>display: flex;</code> creates a flex container, and the items are spaced using <code>justify-content: space-around;</code>.</p>
+</section>
+
+<section id="flexbox-intro">
+  <h1>Flexbox Intro</h1>
+  <p>
+    Flexbox, or the Flexible Box Layout, is a CSS3 layout model that allows items within a container to be automatically arranged depending on screen size and available space.
+  </p>
+
+  <h3>✅ Benefits of Flexbox:</h3>
+  <ul>
+    <li>Easy alignment of items</li>
+    <li>Responsive design-friendly</li>
+    <li>No need to use floats or positioning</li>
+  </ul>
+
+  <h3>🔧 Basic Syntax:</h3>
+  <pre><code>
+.container {
+  display: flex;
+}
+  </code></pre>
+
+  <p>After setting <code>display: flex</code> on a container, its child elements become flex items and can be manipulated using various flex properties.</p>
+</section>
+
+<section id="flex-container">
+  <h1>Flex Container</h1>
+  <p>
+    A Flex Container is the parent element that has <code>display: flex</code> or <code>display: inline-flex</code> set. All its direct children become flex items.
+  </p>
+
+  <h3>📌 Basic Example:</h3>
+  <pre><code>
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+  </code></pre>
+
+  <h3>⚙️ Common Flex Container Properties:</h3>
+  <ul>
+    <li><code>flex-direction</code> - row | column | row-reverse | column-reverse</li>
+    <li><code>justify-content</code> - flex-start | center | space-between | space-around</li>
+    <li><code>align-items</code> - stretch | center | flex-start | flex-end</li>
+    <li><code>flex-wrap</code> - nowrap | wrap | wrap-reverse</li>
+    <li><code>align-content</code> - space-between | center | stretch</li>
+  </ul>
+
+  <p>These properties help arrange and align flex items inside the container efficiently.</p>
+</section>
+
+<section id="flex-items">
+  <h1>Flex Items</h1>
+  <p>
+    Flex Items are the direct children of a flex container. You can control their size, order, and alignment using various properties.
+  </p>
+
+  <h3>📌 Basic Styling of Flex Items:</h3>
+  <pre><code>
+.item {
+  flex: 1;
+  order: 2;
+  align-self: center;
+}
+  </code></pre>
+
+  <h3>⚙️ Common Flex Item Properties:</h3>
+  <ul>
+    <li><code>order</code> - Changes the order of the item (default is 0)</li>
+    <li><code>flex-grow</code> - Defines how much the item grows relative to the others</li>
+    <li><code>flex-shrink</code> - Defines how much the item shrinks if necessary</li>
+    <li><code>flex-basis</code> - Sets the initial size before remaining space is distributed</li>
+    <li><code>flex</code> - A shorthand for grow, shrink, and basis (e.g., <code>flex: 1 1 auto</code>)</li>
+    <li><code>align-self</code> - Overrides the container’s <code>align-items</code> for a single item</li>
+  </ul>
+
+  <p>Use these properties to control how each flex item behaves inside the container.</p>
+</section>
+
+<section id="flex-responsive">
+  <h1>Flex Responsive</h1>
+  <p>
+    Flexbox makes it easy to create responsive layouts that adapt to various screen sizes without using floats or positioning.
+  </p>
+
+  <h3>📱 Example: Responsive Flexbox Layout</h3>
+  <pre><code>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+  </code></pre>
+
+  <h3>🔁 Key Concepts:</h3>
+  <ul>
+    <li><strong>flex-wrap: wrap;</strong> - Allows items to wrap to the next line if needed</li>
+    <li><strong>flex-basis:</strong> - Sets minimum width before wrapping (e.g., <code>200px</code>)</li>
+    <li><strong>flex:</strong> - Shorthand for grow, shrink, and basis (e.g., <code>flex: 1 1 200px</code>)</li>
+    <li><strong>media queries:</strong> - Further adjust layout based on screen width</li>
+  </ul>
+
+  <h3>🧪 Example with Media Queries</h3>
+  <pre><code>
+@media (max-width: 600px) {
+  .item {
+    flex: 1 1 100%;
+  }
+}
+  </code></pre>
+
+  <p>This ensures your layout adjusts beautifully across desktops, tablets, and phones.</p>
+</section>
+
+<section id="grid-intro">
+  <h1>CSS Grid Intro</h1>
+  <p>
+    CSS Grid Layout is a powerful two-dimensional layout system for the web. It lets you design web pages using rows and columns.
+  </p>
+
+  <h3>📚 Why Use Grid?</h3>
+  <ul>
+    <li>✅ Easy to build complex layouts</li>
+    <li>✅ Control over both rows and columns</li>
+    <li>✅ Clean and readable code</li>
+  </ul>
+
+  <h3>🧪 Example: Basic Grid Container</h3>
+  <pre><code>
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
+.item {
+  background-color: lightblue;
+  padding: 20px;
+  text-align: center;
+}
+  </code></pre>
+
+  <p>This creates a 3-column grid layout with gaps between grid items.</p>
+</section>
+
+<section id="grid-columns-rows">
+  <h1>CSS Grid Columns & Rows</h1>
+  <p>
+    In CSS Grid, you can define the number and size of columns and rows using the <code>grid-template-columns</code> and <code>grid-template-rows</code> properties.
+  </p>
+
+  <h3>📦 Define Columns and Rows</h3>
+  <pre><code>
+.container {
+  display: grid;
+  grid-template-columns: 100px 200px auto;
+  grid-template-rows: 50px 100px;
+}
+  </code></pre>
+  <p>This creates a grid with 3 columns (fixed and auto width) and 2 rows with specific heights.</p>
+
+  <h3>🎯 Repeat Function</h3>
+  <p>Use <code>repeat()</code> to simplify repetitive column/row definitions:</p>
+  <pre><code>
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+  </code></pre>
+  <p>This creates 3 equal-width columns using fractional units.</p>
+
+  <h3>🔢 Units Used</h3>
+  <ul>
+    <li><code>px</code> – pixels</li>
+    <li><code>%</code> – percentage</li>
+    <li><code>fr</code> – fractional unit of available space</li>
+    <li><code>auto</code> – automatic sizing</li>
+  </ul>
+</section>
+
+<section id="grid-container">
+  <h1>CSS Grid Container</h1>
+  <p>
+    To use CSS Grid Layout, you must first define a container element as a grid with <code>display: grid</code>.
+    All direct children of the grid container become grid items.
+  </p>
+
+  <h3>📦 Defining a Grid Container</h3>
+  <pre><code>
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+  </code></pre>
+  <p>This creates a grid with three equal-width columns and a 10px gap between rows and columns.</p>
+
+  <h3>🔧 Additional Properties</h3>
+  <ul>
+    <li><code>grid-template-columns</code> – defines number and size of columns</li>
+    <li><code>grid-template-rows</code> – defines number and size of rows</li>
+    <li><code>gap</code> – shorthand for <code>row-gap</code> and <code>column-gap</code></li>
+    <li><code>justify-content</code> – aligns the grid along the row axis</li>
+    <li><code>align-content</code> – aligns the grid along the column axis</li>
+  </ul>
+
+  <h3>✅ Example Layout</h3>
+  <pre><code>
+.container {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: auto auto;
+  gap: 15px;
+  padding: 20px;
+}
+  </code></pre>
+</section>
+
+   
+  </div>
+
+</body>
+</html>
